@@ -1,0 +1,5 @@
+﻿d:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: 中间目录(Debug\)包含从另一个项目(EasyTcpServer.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  ServerTcp.cpp
+E:\DolphinProject\CPPSocket\EasyTcpServer\TcpServer.hpp(79,32): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+E:\DolphinProject\CPPSocket\EasyTcpServer\TcpServer.hpp(143,18): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  EasyTcpServer.vcxproj -> E:\DolphinProject\CPPSocket\Debug\Server.exe
