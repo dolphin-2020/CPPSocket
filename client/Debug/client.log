@@ -1,6 +1,9 @@
 ﻿  Client.cpp
-E:\DolphinProject\CPPSocket\client\TcpClient.hpp(71,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-E:\DolphinProject\CPPSocket\client\Client.cpp(43,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\DolphinProject\CPPSocket\client\Client.cpp(44,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-E:\DolphinProject\CPPSocket\client\Client.cpp(50,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  client.vcxproj -> E:\DolphinProject\CPPSocket\Debug\Client.exe
+C:\DolphinProject\AAAAA\client\TcpClient.hpp(71,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\DolphinProject\AAAAA\client\Client.cpp(42,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DolphinProject\AAAAA\client\Client.cpp(43,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\DolphinProject\AAAAA\client\Client.cpp(49,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  TcpClient.hpp
+C:\DolphinProject\AAAAA\client\TcpClient.hpp(71,31): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  Generating Code...
+  client.vcxproj -> C:\DolphinProject\AAAAA\Debug\Client.exe

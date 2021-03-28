@@ -241,13 +241,14 @@ public:
 		char cache[4096];//
 		int r = recv(_cSock, cache, sizeof(Header), 0);
 		Header* h = (Header*)cache;
+		cout <<"header length is:"<< h->len << endl;
 		if (r <= 0)
 		{
 			cout << "Client " <<(int) _cSock << " logout" << endl;
 			return -1;
 		}
 		recv(_cSock, cache + sizeof(Header), h->len - sizeof(Header), 0);
-
+		
 		OnNetMsg(_cSock,h);
 		return 0;
 	}
@@ -263,7 +264,8 @@ public:
 				<< login->name << " Password:" << login->pwd << endl;
 			//ignore passowrd and name
 			LoginRet loginRet;
-			send(_cSock, (const char*)&loginRet, sizeof(loginRet), 0);
+			//send(_cSock, (const char*)&loginRet, sizeof(loginRet), 0);
+			sendData(_cSock, &loginRet);
 		}
 		break;
 		case LOGOUT:
@@ -272,13 +274,16 @@ public:
 			cout << "Receive data length:" << logout->len << "  Name:"
 				<< logout->userName << " CMD:" << logout->cmd << endl;
 			LogoutRet logoutRet;
-			send(_cSock, (const char*)&logoutRet, sizeof(logoutRet), 0);
+			//send(_cSock, (const char*)&logoutRet, sizeof(logoutRet), 0);
+			sendData(_cSock, &logoutRet);
 		}
 		break;
 		default:
 		{
 			Header h = { 0,ERROR_INFO };
-			send(_cSock, (const char*)&h, sizeof(h), 0);
+			//send(_cSock, (const char*)&h, sizeof(h), 0);
+			sendData(_cSock, &h);
+			
 		}
 		break;
 		}

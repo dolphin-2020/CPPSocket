@@ -111,10 +111,11 @@ public:
 				std::cout << "Mission End " << _sock << std::endl;
 				return false;
 			}
+			
 			if (FD_ISSET(_sock, &fdRead))
 			{
 				FD_CLR(_sock, &fdRead);
-				if (-1 == recvData(_sock))//receive message in here
+				if (-1 == recvData())//receive message in here
 				{
 					std::cout << "Mission End " << _sock << std::endl;
 					return false;
@@ -128,17 +129,17 @@ public:
 	{
 		return INVALID_SOCKET != _sock;
 	}
-	int recvData(SOCKET _cSock)
+	int recvData()
 	{
-		char cache[4096];// 
-		int r = recv(_cSock, cache, sizeof(Header), 0);
+		char cache[4096];
+		int r = recv(_sock, cache, sizeof(Header), 0);
 		Header* h = (Header*)cache;
 		if (r <= 0)
 		{
 			cout << "Disconnect" << endl;
 			return -1;
 		}
-		recv(_cSock, cache + sizeof(Header), h->len - sizeof(Header), 0);
+		recv(_sock, cache + sizeof(Header), h->len - sizeof(Header), 0);
 		onNetMsg(h);
 		return 0;
 	}
@@ -164,10 +165,6 @@ public:
 			cout << "Receive server New JOIN length:" << newJoin->len << endl;
 		}
 		break;
-		default:
-		{
-		}
-		break;
 		}
 	}
 
@@ -179,7 +176,5 @@ public:
 		}
 		return SOCKET_ERROR;
 	}
-
 };
-
 #endif // !_TCPCLIENT_HPP_

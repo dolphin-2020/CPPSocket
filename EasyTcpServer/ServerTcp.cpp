@@ -9,6 +9,7 @@ int main()
 	while (s.IsRun())
 	{
 		s.OnRun();
+		//cout << "deal with other thing...\n";
 	}
 	s.Close();
 	system("pause");

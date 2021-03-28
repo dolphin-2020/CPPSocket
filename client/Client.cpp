@@ -13,8 +13,7 @@ int main()
 
 	//Thread
 	std::thread t1(threadCMD, &tc);
-	t1.join();
-
+	t1.detach();
 	while (tc.IsRun())
 	{
 		tc.onRun();
@@ -77,6 +76,26 @@ void threadCMD(TcpClient* client)
 
 
 
+
+//#ifdef _WIN32 //use to for windodws
+//#define WIN32_LEAN_AND_MEAN
+//#include <Windows.h>
+//#include<WinSock2.h>
+//#pragma comment (lib,"ws2_32.lib")
+//#include<string.h>
+//#include<iostream>
+//#else//use to for mac or linux
+//#include<unistd.h>
+//#include<arpa/inet.h>
+//#include<string.h>
+//#include<iostream>
+//
+//#define SOCKET int
+//#define INVALID_SOCKET (SOCKET)(~0)
+//#define SOCKET_ERROR(-1)
+//#endif
+//#include<thread>
+//using namespace std;
 //int processor(SOCKET cSock);
 //void threadCMD(SOCKET sock);
 //enum CMD
@@ -144,10 +163,11 @@ void threadCMD(TcpClient* client)
 //	}
 //	int sock;
 //};
-
-
+//bool isExit = false;
+//
 //int main()
 //{
+//
 //#ifdef _WIN32
 //	WORD verson = MAKEWORD(2, 2);
 //	WSADATA data;
@@ -193,7 +213,7 @@ void threadCMD(TcpClient* client)
 //		fd_set fdRead;
 //		FD_ZERO(&fdRead);
 //		FD_SET(sock, &fdRead);
-		timeval t = { 1,0 };
+//		timeval t = { 1,0 };
 //		int ret = select(sock, &fdRead, 0, 0, &t);
 //		if (ret < 0)
 //		{
